@@ -16,9 +16,9 @@ Metadata:
     LicenseUrl: LICENSE
     ReadmeUrl: README.md
     Labels: ["cognito", "passwordless", "authentication", "auth", "sample"]
-    HomepageUrl: https://github.com/aws-samples/amazon-cognito-passwordless-email-auth/tree/master/cognito
+    HomepageUrl: https://github.com/anandr2bf/amazon-cognito-passwordless-email-auth/tree/master/cognito
     SemanticVersion: 1.0.3
-    SourceCodeUrl: https://github.com/aws-samples/amazon-cognito-passwordless-email-auth/tree/master/cognito
+    SourceCodeUrl: https://github.com/anandr2bf/amazon-cognito-passwordless-email-auth/tree/master/cognito
 
 Globals:
   Function:
@@ -62,21 +62,21 @@ Resources:
     Properties:
       CodeUri: lambda-triggers/verify-auth-challenge-response/
       Handler: verify-auth-challenge-response.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs18.x
 
   PreSignUp:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: lambda-triggers/pre-sign-up/
       Handler: pre-sign-up.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs18.x
 
   PostAuthentication:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: lambda-triggers/post-authentication/
       Handler: post-authentication.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs18.x
       Role: !GetAtt PostAuthenticationRole.Arn
 
   PostAuthenticationRole:
